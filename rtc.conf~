@@ -1,0 +1,13 @@
+#
+# @file rtc.conf
+# @brief rtc.conf for Armadillo
+#
+# Set your CORBA NameServer's IP address in XXX.XXX.XXX.XXX
+corba.nameservers:192.168.1.1
+naming.formats: %h.host_cxt/%n.rtc
+#specify endpoint when this component always appearas zombie.
+#corba.endpoint:192.168.1.1:6666
+logger.enable:NO 
+corba.args: -start -always -ORBconfigFile /etc/omniORB.cfg
+
+

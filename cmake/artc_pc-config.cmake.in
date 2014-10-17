@@ -1,0 +1,54 @@
+# artc_pc CMake config file
+#
+# This file sets the following variables:
+# artc_pc_FOUND - Always TRUE.
+# artc_pc_INCLUDE_DIRS - Directories containing the artc_pc include files.
+# artc_pc_IDL_DIRS - Directories containing the artc_pc IDL files.
+# artc_pc_LIBRARIES - Libraries needed to use artc_pc.
+# artc_pc_DEFINITIONS - Compiler flags for artc_pc.
+# artc_pc_VERSION - The version of artc_pc found.
+# artc_pc_VERSION_MAJOR - The major version of artc_pc found.
+# artc_pc_VERSION_MINOR - The minor version of artc_pc found.
+# artc_pc_VERSION_REVISION - The revision version of artc_pc found.
+# artc_pc_VERSION_CANDIDATE - The candidate version of artc_pc found.
+
+message(STATUS "Found artc_pc-@PROJECT_VERSION@")
+set(artc_pc_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(artc_pc_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(artc_pc_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(artc_pc_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(artc_pc_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(artc_pc_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(artc_pc_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(artc_pc_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(artc_pc_VERSION @PROJECT_VERSION@)
+set(artc_pc_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(artc_pc_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(artc_pc_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(artc_pc_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

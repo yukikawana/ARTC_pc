@@ -1,0 +1,12 @@
+/usr/local/components/lib/pkgconfig/artc_pc.pc
+/usr/local/components/share/artc_pc-1/artc_pc-config.cmake
+/usr/local/components/share/artc_pc-1/artc_pc-config-version.cmake
+/usr/local/components/include/artc_pc-1/idl/TimedNavdata.idl
+/usr/local/components/include/artc_pc-1/idl/TimedControldata.idl
+/usr/local/components/include/artc_pc-1/artc_pc/idl/TimedNavdata.hh
+/usr/local/components/include/artc_pc-1/artc_pc/idl/TimedControldata.hh
+/usr/local/components/include/artc_pc-1/artc_pc/artc_pc.h
+/usr/local/components/lib/libartc_pc.so
+/usr/local/components/bin/artc_pccomp
+/usr/local/components/lib/artc_pc/artc_pcDepends.cmake
+/usr/local/components/lib/artc_pc/artc_pcDepends-noconfig.cmake
