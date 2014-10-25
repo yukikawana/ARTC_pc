@@ -21,7 +21,7 @@ add_dependencies(${PROJECT_NAME_LOWER} ALL_IDL_TGT)
 target_link_libraries(${PROJECT_NAME_LOWER} ${OPENRTM_LIBRARIES})
 
 add_executable(${PROJECT_NAME_LOWER}comp ${standalone_srcs})
-target_link_libraries(${PROJECT_NAME_LOWER}comp ${PROJECT_NAME_LOWER} pthread avutil avformat avcodec swscale opencv_calib3d opencv_core opencv_features2d opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect opencv_photo opencv_stitching opencv_superres opencv_video opencv_videostab)
+target_link_libraries(${PROJECT_NAME_LOWER}comp ${PROJECT_NAME_LOWER} pthread avutil avformat avcodec swscale opencv_calib3d opencv_core opencv_features2d opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect opencv_photo opencv_stitching opencv_video opencv_videostab)
 
 install(TARGETS ${PROJECT_NAME_LOWER} ${PROJECT_NAME_LOWER}comp
     EXPORT ${PROJECT_NAME_LOWER}
